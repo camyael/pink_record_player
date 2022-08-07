@@ -1,0 +1,227 @@
+/* RESETEO */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* INICIO DE LA PAGINA */
+body {
+    background-color: #FFE0E9;
+    color: #602437;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(#ff7aa2, #FFC2D4);
+    border-radius: 30px;
+}
+
+.inicio {
+    margin: 10% auto;
+    background-color: #FF9EBB;
+    background-color: rgb(255, 224, 233);
+    background: linear-gradient(180deg, rgba(255,224,233) 2%, rgba(255, 158, 187, 1) 31%);
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 22px #FFC2D4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* VINILOS */
+#vinilos {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    margin: 2rem;
+}
+
+#vinilos::-webkit-scrollbar {
+    height: 0.7em;
+}
+
+#vinilos::-webkit-scrollbar-thumb {
+    background: #FFC2D4;
+    border-radius: 10px;
+}
+
+#vinilos .vinilos_artistas {
+    scroll-snap-align: start;
+}
+
+.vinilos_artistas figure img {
+    width: 300px;
+}
+
+.vinilos_artistas .play {
+    text-align: center;
+}
+
+/* TOCADISCOS */
+#tocadiscos {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 25px;
+}
+
+/* DISCO */
+.tocadiscos_formaPrincipal {
+    background-color: #ff7aa2;
+    box-shadow: 4px 6px 27px -2px #602437;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    width: 70%;
+}
+
+.tocadiscos_disco {
+    background-color: #602437;
+    border-radius: 100%;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 6px 27px -2px #000;
+}
+
+.disco {
+    background-color: #000000;
+    background: radial-gradient(circle,rgba(0,0,0,1) 35%,rgb(26, 26, 26) 50%,rgba(0,0,0,1) 80%);
+    border-radius: 100%;
+    width: 440px;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disco_diseño {
+    background-color: #FF9EBB;
+    background: radial-gradient(circle, #FFC2D4 10%,#FF9EBB 40%);
+    border-radius: 100%;
+    width: 170px;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disco_agujero {
+    background-color: #602437;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+}
+
+/* CONTROLES */
+.tocadiscos_controles {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 50px;
+}
+
+/* BRAZO */
+.brazo {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.brazoDeTono {
+    width: 130px;
+    height: 130px;
+    background-color: #602437;
+    box-shadow: 4px 6px 27px -2px #000;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.brazoDeTono_interior {
+    width: 90px;
+    height: 90px;
+    background-color: #FFC2D4;
+    box-shadow: 0px -10px 16px -5px rgba(0,0,0,0.24);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.brazoDeTono_interior_interior {
+    width: 30px;
+    height: 60px;
+    background-color: #FFC2D4;
+    border-radius: 6px 6px 0px 0px;
+    box-shadow: 0px -10px 16px -5px rgba(0,0,0,0.24);
+}
+
+.brazoDeTono_interior1 {
+    width: 30px;
+    height: 20px;
+    background-color: #FFC2D4;
+}
+
+.brazoDeTono_largo {
+    width: 30px;
+    height: 180px;
+    background-color: #FFC2D4;
+    box-shadow: 4px 6px 27px -2px #000;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* PLAY */
+.boton_play {
+    width: 150px;
+    height: 150px;
+    background-color: #FFC2D4;
+    box-shadow: 4px 6px 27px -2px #000;
+    border-radius: 100%;
+}
+
+/* VOLUMEN */
+.volumen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.volumen_linea {
+    width: 10px;
+    height: 40px;
+    background-color: #602437;
+}
+
+.regulador {
+    width: 40px;
+    height: 30px;
+    background-color: #FFC2D4
+}
