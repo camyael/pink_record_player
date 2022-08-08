@@ -73,6 +73,12 @@ h2 a {
     text-align: center;
 }
 
+.vinilos_artistas .playPausa {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+
 /* TOCADISCOS */
 #tocadiscos {
     display: flex;
@@ -136,7 +142,7 @@ h2 a {
 .tocadiscos_controles {
     display: flex;
     flex-flow: row nowrap;
-    column-gap: 50px;
+    column-gap: 100px;
 }
 
 /* BRAZO */
@@ -144,6 +150,11 @@ h2 a {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+}
+
+.brazo-rotacion{
+    transition: all 2s ease-in;
+    transform: rotate(60deg) translate(-40px, 20px)
 }
 
 .brazoDeTono {
