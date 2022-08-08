@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Press+Start+2P&display=swap');
+
 /* RESETEO */
 
 * {
@@ -5,10 +7,11 @@
     margin: 0;
 }
 
-/* INICIO DE LA PAGINA */
+/* GENERALES - PAGINA */
 body {
     background-color: #FFE0E9;
     color: #602437;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -20,40 +23,134 @@ body::-webkit-scrollbar-thumb {
     border-radius: 30px;
 }
 
+/* PAGINA PRINCIPAL */
 .inicio {
     margin: 10% auto;
+    padding: 0 40px;
     background-color: #FF9EBB;
-    background-color: rgb(255, 224, 233);
-    background: linear-gradient(180deg, rgba(255,224,233) 2%, rgba(255, 158, 187, 1) 31%);
     width: 500px;
     height: 300px;
     border-radius: 10px;
-    box-shadow: 0px 0px 50px 22px #FFC2D4;
-
+    box-shadow: 0px 0px 50px 39px #FFC2D4;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    color: #ff7aa2;
 }
 
-h2 a {
-    color: white;
+.inicio h2{
+    text-shadow: #FFE0E9 2px 0 5px;
+    text-align: start;
+    font-size: 2.4em;
+    font-family:'Press Start 2P', cursive;
+}
+
+/* inputs */
+.nombre-de-usuario {
+    text-align: center;
+}
+
+.nombre-de-usuario_inputText {
+    text-align: center;
+    background-color: #FFE0E9;
+    color: #602437;
+    box-shadow: 2px 0px 25px 10px #FFC2D4;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 10px;
+    font-size: 0.9em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}
+
+.nombre-de-usuario_inputText::placeholder{
+    font-weight: 400;
+}
+
+.nombre-de-usuario_enviar {
+    margin-top: 1em;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF9EBB;
+    box-shadow: 2px 0px 25px 2px #FFC2D4;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    color: #602437;
+}
+
+/* mensaje de bienvenida */
+.entrar {
+    display: none;
+    background-color: #ff7aa2;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #FFC2D4;
+    margin-top: 15px;
+    padding: 5px 0;
+}
+
+.entrar:hover {
+    box-shadow: 2px 0px 15px 2px #ff7aa2;;
+}
+
+.entrar h3 {
+    font-size: 1em;
+}
+
+.mostrar {
+    display: block
+}
+
+/* REPRODUCTOR */
+header {
+    padding: 40px 0
+}
+
+header h2 {
+    text-align: center;
+}
+
+#reproductor {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto auto;
+    max-width: 98vw;
+    border-radius: 50px;
+    box-shadow: 20px 20px 60px #FFC2D4, -20px -20px 60px #FFE0E9;
+}
+
+footer {
+    padding: 10px 0;
+    text-align: center;
+    background-color: #ff7aa2;
+    margin: auto auto;
+    width: 150px;
+    border-radius: 5px;
+}
+
+footer a{
     text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #602437;
 }
-
 
 /* VINILOS */
 #vinilos {
     display: flex;
+    flex-direction: column;
+    row-gap: 40px;
     align-items: center;
-    overflow-x: auto;
+    overflow-y: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
-    margin: 2rem;
+    max-height: 80vh;
 }
 
 #vinilos::-webkit-scrollbar {
-    height: 0.7em;
+    width: 0.7em;
 }
 
 #vinilos::-webkit-scrollbar-thumb {
@@ -66,7 +163,7 @@ h2 a {
 }
 
 .vinilos_artistas figure img {
-    width: 300px;
+    width: 200px;
 }
 
 .vinilos_artistas .play {
@@ -75,8 +172,9 @@ h2 a {
 
 .vinilos_artistas .playPausa {
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
-    column-gap: 30px;
+    column-gap: 10px;
 }
 
 /* TOCADISCOS */
@@ -84,7 +182,6 @@ h2 a {
     display: flex;
     justify-content: center;
     align-content: center;
-    padding: 25px;
 }
 
 /* DISCO */
@@ -92,10 +189,10 @@ h2 a {
     background-color: #ff7aa2;
     box-shadow: 4px 6px 27px -2px #602437;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-radius: 30px;
-    width: 70%;
+    width: 800px;
 }
 
 .tocadiscos_disco {
@@ -142,7 +239,8 @@ h2 a {
 .tocadiscos_controles {
     display: flex;
     flex-flow: row nowrap;
-    column-gap: 100px;
+    justify-content: space-between;
+    column-gap: 30px;
 }
 
 /* BRAZO */
@@ -154,7 +252,7 @@ h2 a {
 
 .brazo-rotacion{
     transition: all 2s ease-in;
-    transform: rotate(60deg) translate(-40px, 20px)
+    transform: rotate(60deg) translate(-80px, 60px)
 }
 
 .brazoDeTono {
@@ -207,6 +305,7 @@ h2 a {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    row-gap: 27px;
 }
 
 /* PLAY */
@@ -216,6 +315,15 @@ h2 a {
     background-color: #FFC2D4;
     box-shadow: 4px 6px 27px -2px #000;
     border-radius: 100%;
+}
+
+/* PAUSA */
+.boton_stop {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 4px 6px 27px -2px #000;
 }
 
 /* VOLUMEN */

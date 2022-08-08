@@ -7,34 +7,45 @@
 const listaMusica = [
     {
         artista: 'Harry Styles',
-        cancion: 'little-freak'
+        cancion: 'Little Freak',
+        audio: 'little-freak'
     },
     {
         artista: 'Taylor Swift',
-        cancion: 'mirrorball'
+        cancion: 'Mirrorball',
+        audio: 'mirrorball'
     },
     {
         artista: 'Sufjan Stevens',
-        cancion: 'fourth-of-july'
+        cancion: 'Fourth of July',
+        audio: 'fourth-of-july'
     },
     {
         artista: 'Lana del Rey',
-        cancion: 'summertime-sadness'
+        cancion: 'Summetime Sadness',
+        audio: 'summertime-sadness'
     },
     {
         artista: 'The 1975',
-        cancion: 'sincerity-is-scary'
+        cancion: 'Sincerity is Scary',
+        audio: 'sincerity-is-scary'
     },
     {
         artista: 'Phoebe Bridgers',
-        cancion: 'graceland-too'
+        cancion: 'Graceland Too',
+        audio: 'graceland-too'
     },
     {
         artista: 'The Smiths',
-        cancion: 'asleep'
+        cancion: 'Asleep',
+        audio: 'asleep'
     }
 ]
 
-const songs = listaMusica.map((i)=>i.cancion)
+// obtiene los datos del array principal y los divido en arrays separadas
+const songs = listaMusica.map((i)=>i.audio)
+const artista = listaMusica.map((i)=>i.artista)
+const cancion = listaMusica.map((i)=>i.cancion)
 
-console.log(songs)
+//las voy a utilizar para avisar que cancion esta sonando
+
