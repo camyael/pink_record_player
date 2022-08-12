@@ -1,14 +1,9 @@
 //guardando artistas con su cancion
-
-
-// songs.push("little-freak")
-// songs.push("mirrorball")
-
 const listaMusica = [
     {
         artista: 'Harry Styles',
         cancion: 'Little Freak',
-        audio: 'little-freak'
+        audio: 'little-freak',
     },
     {
         artista: 'Taylor Swift',

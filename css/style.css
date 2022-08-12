@@ -103,13 +103,99 @@ body::-webkit-scrollbar-thumb {
 
 /* REPRODUCTOR */
 header {
-    padding: 40px 0
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0
 }
 
 header h2 {
     text-align: center;
 }
 
+header .botonVolver, header .botonHistorial {
+    padding: 10px 0;
+    text-align: center;
+    background-color: #ff7aa2;
+    width: 150px;
+    border-radius: 5px;
+}
+
+header .botonVolver a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #602437;
+}
+
+header .botonHistorial {
+    cursor: pointer;
+}
+
+.historial_lateral{
+    display: none;
+    position: absolute;
+    background-color: #ff7aa29b;
+    width: 450px;
+    height: 100%;
+    padding: 20px;
+    max-height: 100vh;
+    top: 0;
+    right: -1000px;
+}
+
+.historial_lateral.mostrar{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    right: 0px;
+}
+
+.historial_lateral_salir{
+    text-align: center;
+}
+
+.historial_lateral_salir img {
+    width: 38px;
+    cursor: pointer;
+}
+
+.historial_lateral_canciones{
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    row-gap: 20px;
+    overflow-y: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    max-height: 80vh;
+}
+
+.historial_lateral_canciones::-webkit-scrollbar {
+    width: 0.9em;
+}
+
+.historial_lateral_canciones::-webkit-scrollbar-thumb {
+    background: #FFC2D4;
+    border-radius: 10px;
+}
+
+.plantilla_canciones {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #cdb4db;
+    border-radius: 10px;
+    width: 85%;
+    padding: 20px 0px 20px 40px;
+    column-gap: 40px;
+    font-size: 1.1em;
+}
+
+.plantilla_canciones div img {
+    width: 30px
+}
+
+/* REPRODUCTOR */
 #reproductor {
     text-align: center;
     display: flex;
@@ -119,22 +205,6 @@ header h2 {
     max-width: 98vw;
     border-radius: 50px;
     box-shadow: 20px 20px 60px #FFC2D4, -20px -20px 60px #FFE0E9;
-}
-
-footer {
-    padding: 10px 0;
-    text-align: center;
-    background-color: #ff7aa2;
-    margin: auto auto;
-    width: 150px;
-    border-radius: 5px;
-}
-
-footer a{
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.2em;
-    color: #602437;
 }
 
 /* VINILOS */
@@ -154,7 +224,7 @@ footer a{
 }
 
 #vinilos::-webkit-scrollbar-thumb {
-    background: #FFC2D4;
+    background: #FF9EBB;
     border-radius: 10px;
 }
 
