@@ -12,11 +12,9 @@ let indice
 let histCanciones = []
 
 // SE CONSULTA AL LOCALSTORAGE
-if(localStorage.getItem("histCanciones")){
-    histCanciones = JSON.parse(localStorage.getItem("histCanciones")) 
-} else {
-    localStorage.setItem("histCanciones", JSON.stringify(histCanciones))
-}
+// <---------- OPERADOR TERNARIO ---------->
+localStorage.getItem("histCanciones") ? histCanciones = JSON.parse(localStorage.getItem("histCanciones")) : localStorage.setItem("histCanciones", JSON.stringify(histCanciones))
+
 
 // boton play
 const playBoton = document.getElementsByClassName('play')
@@ -33,7 +31,6 @@ for(i of playBoton){
         //se guarda en la array y de ahí al localstorage
         const cancionObj = new Musica(`${artista[indice]}`, `${cancion[indice]}`)
         histCanciones.push(cancionObj)
-
         localStorage.setItem("histCanciones", JSON.stringify(histCanciones))
 
     })
@@ -52,17 +49,16 @@ for(i of pausaBoton){
 
 //boton play del tocadiscos
 const play_tocadiscos = document.querySelector('.boton_play')
-if(play_tocadiscos){
-    play_tocadiscos.addEventListener('click', reproducirAleatorio)
-}
+// <---------- OPERADOR AND ---------->
+play_tocadiscos && play_tocadiscos.addEventListener('click', reproducirAleatorio)
+
 // boton stop del tocadiscos
 const stop_tocadiscos = document.querySelector('.boton_stop')
-if(stop_tocadiscos){
-    stop_tocadiscos.addEventListener('click', ()=>{
+// <---------- OPERADOR AND ---------->
+stop_tocadiscos && stop_tocadiscos.addEventListener('click', ()=>{
         audio.pause() 
         brazo.classList.remove("brazo-rotacion")
     })
-}
 
 // cuando se reproduce en aleatorio aleatorio
 function reproducirAleatorio() {
@@ -80,9 +76,7 @@ function reproducirAleatorio() {
 // rotacion del brazo del tocadiscos cuando suena la cancion
 const brazo = document.querySelector(".brazo")
 
-function brazoRotacion(){
-    brazo.classList.add("brazo-rotacion")
-}
+function brazoRotacion(){brazo.classList.add("brazo-rotacion")}
 
 // boton de historial
 const botonHistorial = document.querySelector(".botonHistorial")
@@ -111,9 +105,5 @@ botonHistorial.addEventListener('click', ()=>{
         `
     })
 
-
-    botonSalir.addEventListener('click', ()=>{
-        historialLateral.classList.remove("mostrar")
-    })
-
+    botonSalir.addEventListener('click', ()=>{ historialLateral.classList.remove("mostrar")})
 })

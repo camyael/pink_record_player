@@ -3,42 +3,42 @@ const listaMusica = [
     {
         artista: 'Harry Styles',
         cancion: 'Little Freak',
-        audio: 'little-freak',
+        src: 'little-freak',
     },
     {
         artista: 'Taylor Swift',
         cancion: 'Mirrorball',
-        audio: 'mirrorball'
+        src: 'mirrorball'
     },
     {
         artista: 'Sufjan Stevens',
         cancion: 'Fourth of July',
-        audio: 'fourth-of-july'
+        src: 'fourth-of-july'
     },
     {
         artista: 'Lana del Rey',
         cancion: 'Summetime Sadness',
-        audio: 'summertime-sadness'
+        src: 'summertime-sadness'
     },
     {
         artista: 'The 1975',
         cancion: 'Sincerity is Scary',
-        audio: 'sincerity-is-scary'
+        src: 'sincerity-is-scary'
     },
     {
         artista: 'Phoebe Bridgers',
         cancion: 'Graceland Too',
-        audio: 'graceland-too'
+        src: 'graceland-too'
     },
     {
         artista: 'The Smiths',
         cancion: 'Asleep',
-        audio: 'asleep'
+        src: 'asleep'
     }
 ]
 
 // obtiene los datos del array principal y los divido en arrays separadas
-const songs = listaMusica.map((i)=>i.audio)
+const songs = listaMusica.map((i)=>i.src)
 const artista = listaMusica.map((i)=>i.artista)
 const cancion = listaMusica.map((i)=>i.cancion)
 
