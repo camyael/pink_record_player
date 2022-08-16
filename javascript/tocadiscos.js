@@ -12,7 +12,6 @@ let indice
 let histCanciones = []
 
 // SE CONSULTA AL LOCALSTORAGE
-// <---------- OPERADOR TERNARIO ---------->
 localStorage.getItem("histCanciones") ? histCanciones = JSON.parse(localStorage.getItem("histCanciones")) : localStorage.setItem("histCanciones", JSON.stringify(histCanciones))
 
 
@@ -49,12 +48,25 @@ for(i of pausaBoton){
 
 //boton play del tocadiscos
 const play_tocadiscos = document.querySelector('.boton_play')
-// <---------- OPERADOR AND ---------->
-play_tocadiscos && play_tocadiscos.addEventListener('click', reproducirAleatorio)
+
+play_tocadiscos && play_tocadiscos.addEventListener('click', ()=>{
+    reproducirAleatorio()
+    // <----- LIBRERIA TOASTIFY----->
+    Toastify({
+        text: "Reproduciendo en aleatorio",
+        duration: 4000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #f15f79, #b24592)",
+        }
+      }).showToast();
+})
 
 // boton stop del tocadiscos
 const stop_tocadiscos = document.querySelector('.boton_stop')
-// <---------- OPERADOR AND ---------->
 stop_tocadiscos && stop_tocadiscos.addEventListener('click', ()=>{
         audio.pause() 
         brazo.classList.remove("brazo-rotacion")
