@@ -151,11 +151,12 @@ header .botonHistorial {
     right: 0px;
 }
 
-.historial_lateral_salir{
-    text-align: center;
+.historial_lateral_salirEliminar{
+    display: flex;
+    justify-content: space-around;
 }
 
-.historial_lateral_salir img {
+.historial_lateral_salirEliminar img {
     width: 38px;
     cursor: pointer;
 }
@@ -289,10 +290,10 @@ header .botonHistorial {
 
 .disco_diseño {
     background-color: #FF9EBB;
-    background: radial-gradient(circle, #FFC2D4 10%,#FF9EBB 40%);
+    background: radial-gradient(circle, #FFC2D4 10%,#FF9EBB 40%); 
     border-radius: 100%;
-    width: 170px;
-    height: 170px;
+    width: 185px;
+    height: 185px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -385,6 +386,13 @@ header .botonHistorial {
     background-color: #FFC2D4;
     box-shadow: 4px 6px 27px -2px #000;
     border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton_play img {
+    width: 22px
 }
 
 /* PAUSA */
@@ -407,10 +415,12 @@ header .botonHistorial {
     width: 10px;
     height: 40px;
     background-color: #602437;
+    box-shadow: 4px 6px 27px -2px #000;
 }
 
 .regulador {
     width: 40px;
     height: 30px;
-    background-color: #FFC2D4
+    background-color: #FFC2D4;
+    box-shadow: 4px 3px 27px -2px #000;
 }

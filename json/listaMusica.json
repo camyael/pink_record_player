@@ -1,0 +1,44 @@
+[
+    {
+        "artista": "Harry Styles",
+        "cancion": "Little Freak",
+        "src": "little-freak",
+        "imagen": "harrystyles"
+    },
+    {
+        "artista": "Taylor Swift",
+        "cancion": "Mirrorball",
+        "src": "mirrorball",
+        "imagen": "taylorswift"
+    },
+    {
+        "artista": "Sufjan Stevens",
+        "cancion": "Fourth of July",
+        "src": "fourth-of-july",
+        "imagen": "sufjanstevens"
+    },
+    {
+        "artista": "Lana del Rey",
+        "cancion": "Summetime Sadness",
+        "src": "summertime-sadness",
+        "imagen": "lanadelrey"
+    },
+    {
+        "artista": "The 1975",
+        "cancion": "Sincerity is Scary",
+        "src": "sincerity-is-scary",
+        "imagen": "the1975"
+    },
+    {
+        "artista": "Phoebe Bridgers",
+        "cancion": "Graceland Too",
+        "src": "graceland-too",
+        "imagen": "phoebebridgers"
+    },
+    {
+        "artista": "The Smiths",
+        "cancion": "Asleep",
+        "src": "asleep",
+        "imagen": "thesmiths"
+    }
+]

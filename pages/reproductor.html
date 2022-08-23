@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICONO -->
+    <link rel="icon" href="../img/icon-musica.png">
     <!-- TOASTIFY -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- CSS -->
@@ -21,15 +23,19 @@
         </div>
         <!-- se oculta -->
         <div class="historial_lateral ">
-            <div class="historial_lateral_salir">
+            <div class="historial_lateral_salirEliminar">
                 <div class="botonSalir">
                     <img src="https://img.icons8.com/ios-filled/50/FFFFFF/delete-sign--v1.png"/>
+                </div>
+                <div class="botonEliminar">
+                    <img src="https://img.icons8.com/fluency-systems-filled/48/FFFFFF/delete.png"/>
                 </div>
             </div>
             <div class="historial_lateral_canciones"></div>
         </div>
         
     </header>
+
     <main id="reproductor">
         <section>
             <div id="tocadiscos">
@@ -54,7 +60,9 @@
         
                         <div class="botones">
                             <a href="#">
-                                <div class="boton_play"></div>
+                                <div class="boton_play">
+                                    <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/F25081/external-random-interface-kiranshastry-lineal-kiranshastry.png"/>
+                                </div>
                             </a>
                             <a href="#">
                                 <div class="boton_stop"></div>
@@ -127,7 +135,7 @@
 
             <div class="vinilos_artistas">
                 <figure>
-                    <img src="../img/lanadelrey.webp" alt="">
+                    <img src="../img/borntodie.webp" alt="">
                 </figure>
                 <div class="playPausa">
                     <div class="play" id="summertime-sadness">
@@ -205,6 +213,5 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="../javascript/tocadiscos.js"></script>
-    <script src="../javascript/listaMusica.js"></script>
 </body>
 </html>l
