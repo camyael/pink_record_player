@@ -61,6 +61,7 @@ for(i of pausaBoton){
         audio.pause()
         // remueve la clase y el brazo del tocadiscos vuelve a su lugar
         brazo.classList.remove("brazo-rotacion")
+        diseñoDisco.classList.remove("animacion_vinilo")
         diseñoDisco.style.background = "radial-gradient(circle, #FFC2D4 10%,#FF9EBB 40%)"
     })
 }
@@ -70,7 +71,6 @@ const play_tocadiscos = document.querySelector('.boton_play')
 
 play_tocadiscos && play_tocadiscos.addEventListener('click', ()=>{
     reproducirAleatorio()
-    // <----- LIBRERIA TOASTIFY----->
     Toastify({
         text: "Reproduciendo en aleatorio",
         duration: 4000,
@@ -90,6 +90,7 @@ stop_tocadiscos && stop_tocadiscos.addEventListener('click', ()=>{
         audio.pause()
         diseñoDisco.style.background = "radial-gradient(circle, #FFC2D4 10%,#FF9EBB 40%)"
         brazo.classList.remove("brazo-rotacion")
+        diseñoDisco.classList.remove("animacion_vinilo")
     })
 
 // funcion para cambiar imagen en el vinilo
@@ -103,10 +104,9 @@ function diseño(index) {
 function reproducirAleatorio() {
     //devuelve un numero al azar
     let indiceMusica = Math.floor(Math.random() * songs.length)
-    //devuelve el nombre del indice del array
     let randomCancion = songs[indiceMusica]
     diseñoDisco.style.backgroundImage = `url(../img/${disco[indiceMusica]}.webp)`
-    //el audio toma lo de la array 
+
     audio = new Audio(`../music/${randomCancion}.mp3`)
     console.log(audio)
     audio.play()
@@ -114,12 +114,14 @@ function reproducirAleatorio() {
     diseño(indiceMusica)
 }
 
-// rotacion del brazo del tocadiscos cuando suena la cancion
 const brazo = document.querySelector(".brazo")
+// rotacion del brazo del tocadiscos y vinilo cuando suena la cancion
+function brazoRotacion(){
+    brazo.classList.add("brazo-rotacion")
+    diseñoDisco.classList.add("animacion_vinilo")
+}
 
-function brazoRotacion(){brazo.classList.add("brazo-rotacion")}
-
-// boton de historial
+// historial
 const botonHistorial = document.querySelector(".botonHistorial")
 const historialLateral = document.querySelector(".historial_lateral")
 const botonSalir = document.querySelector(".botonSalir")

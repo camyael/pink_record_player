@@ -117,19 +117,20 @@ header h2 {
 header .botonVolver, header .botonHistorial {
     padding: 10px 0;
     text-align: center;
-    background-color: #ff7aa2;
-    width: 150px;
+    background-color: #FFC2D4;
+    width: 135px;
+    font-size: 1em;
     border-radius: 5px;
 }
 
 header .botonVolver a{
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.2em;
     color: #602437;
 }
 
-header .botonHistorial {
+header .botonHistorial h3 {
+    font-size: 1em;
     cursor: pointer;
 }
 
@@ -158,7 +159,7 @@ header .botonHistorial {
 }
 
 .historial_lateral_salirEliminar img {
-    width: 38px;
+    width: 30px;
     cursor: pointer;
 }
 
@@ -300,6 +301,16 @@ header .botonHistorial {
     align-items: center;
 }
 
+.animacion_vinilo {
+    animation: vinilo 4.5s linear infinite
+}
+
+@keyframes vinilo {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 .disco_agujero {
     background-color: #602437;
     border-radius: 100%;
@@ -424,4 +435,10 @@ header .botonHistorial {
     height: 30px;
     background-color: #FFC2D4;
     box-shadow: 4px 3px 27px -2px #000;
+}
+
+.footer {
+    text-align: center;
+    color: #ff7aa2;
+    padding: 10px;
 }
