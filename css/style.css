@@ -75,6 +75,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 2px 0px 25px 2px #FFC2D4;
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
+    cursor: pointer;
     color: #602437;
 }
 
