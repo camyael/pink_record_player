@@ -8,13 +8,11 @@ class Musica {
 let audio 
 let indice 
 
-// obtiene los datos json para separarlos en nuevos arrays
 const songs = []
 const artista = []
 const cancion = []
 const disco = []
 
-//guardando artistas con su cancion
 fetch('../json/listaMusica.json')
 .then((response) => response.json())
 .then(listaMusica => {
@@ -27,30 +25,34 @@ fetch('../json/listaMusica.json')
 })
 
 // HISTORIAL DE CANCIONES
-let histCanciones = []
+const histCanciones = []
 
 // SE CONSULTA AL LOCALSTORAGE
 localStorage.getItem("histCanciones") ? histCanciones = JSON.parse(localStorage.getItem("histCanciones")) : localStorage.setItem("histCanciones", JSON.stringify(histCanciones))
 
-// boton play
+
 const playBoton = document.getElementsByClassName('play')
 const diseñoDisco = document.querySelector('.disco_diseño')
-
 // recorre todos los botones play
 for(i of playBoton){
     i.addEventListener('click', function(){
     const nombreCancion = this.getAttribute("id")
         audio = new Audio(`../music/${nombreCancion}.mp3`)
         indice = songs.indexOf(nombreCancion)
+        diseño(indice)
         audio.play()
         brazoRotacion()
-        //se guarda en la array y de ahí al localstorage
+
         const cancionObj = new Musica(`${artista[indice]}`, `${cancion[indice]}`)
         histCanciones.push(cancionObj)
-        localStorage.setItem("histCanciones", JSON.stringify(histCanciones))
-        
-        diseño(indice)
+        localStorage.setItem("histCanciones", JSON.stringify(histCanciones)) 
     })
+}
+
+function diseño(index) {
+    diseñoDisco.style.backgroundImage = `url(../img/${disco[index]}.webp)`
+    diseñoDisco.style.backgroundSize = "cover"
+    diseñoDisco.style.backgroundPosition = "center"
 }
 
 //boton pausa
@@ -59,16 +61,14 @@ const pausaBoton = document.getElementsByClassName('pausa')
 for(i of pausaBoton){
     i.addEventListener("click", function(){
         audio.pause()
-        // remueve la clase y el brazo del tocadiscos vuelve a su lugar
         brazo.classList.remove("brazo-rotacion")
         diseñoDisco.classList.remove("animacion_vinilo")
         diseñoDisco.style.background = "radial-gradient(circle, #FFC2D4 10%,#FF9EBB 40%)"
     })
 }
 
-//boton play del tocadiscos
 const play_tocadiscos = document.querySelector('.boton_play')
-
+//boton play del tocadiscos
 play_tocadiscos && play_tocadiscos.addEventListener('click', ()=>{
     reproducirAleatorio()
     Toastify({
@@ -92,19 +92,10 @@ stop_tocadiscos && stop_tocadiscos.addEventListener('click', ()=>{
         brazo.classList.remove("brazo-rotacion")
         diseñoDisco.classList.remove("animacion_vinilo")
     })
-
-// funcion para cambiar imagen en el vinilo
-function diseño(index) {
-    diseñoDisco.style.backgroundImage = `url(../img/${disco[index]}.webp)`
-    diseñoDisco.style.backgroundSize = "cover"
-    diseñoDisco.style.backgroundPosition = "center"
-}
   
-// cuando se reproduce en aleatorio aleatorio
 function reproducirAleatorio() {
-    //devuelve un numero al azar
-    let indiceMusica = Math.floor(Math.random() * songs.length)
-    let randomCancion = songs[indiceMusica]
+    const indiceMusica = Math.floor(Math.random() * songs.length)
+    const randomCancion = songs[indiceMusica]
     diseñoDisco.style.backgroundImage = `url(../img/${disco[indiceMusica]}.webp)`
 
     audio = new Audio(`../music/${randomCancion}.mp3`)
@@ -115,7 +106,6 @@ function reproducirAleatorio() {
 }
 
 const brazo = document.querySelector(".brazo")
-// rotacion del brazo del tocadiscos y vinilo cuando suena la cancion
 function brazoRotacion(){
     brazo.classList.add("brazo-rotacion")
     diseñoDisco.classList.add("animacion_vinilo")
@@ -127,7 +117,6 @@ const historialLateral = document.querySelector(".historial_lateral")
 const botonSalir = document.querySelector(".botonSalir")
 const botonEliminar = document.querySelector(".botonEliminar")
 
-// llamado a donde van las canciones
 const divHistCanciones = document.querySelector(".historial_lateral_canciones")
 
 botonHistorial.addEventListener('click', ()=>{
