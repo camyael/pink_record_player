@@ -28,7 +28,7 @@ fetch('../json/listaMusica.json')
 const histCanciones = []
 
 // SE CONSULTA AL LOCALSTORAGE
-localStorage.getItem("histCanciones") ? histCanciones = JSON.parse(localStorage.getItem("histCanciones")) : localStorage.setItem("histCanciones", JSON.stringify(histCanciones))
+localStorage.getItem("histCanciones") ?? histCanciones = JSON.parse(localStorage.getItem("histCanciones")) : localStorage.setItem("histCanciones", JSON.stringify(histCanciones))
 
 
 const playBoton = document.getElementsByClassName('play')
